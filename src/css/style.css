@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body, body *{
+   display: flex;
+   font-family: monospace;
+}
+
+body{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+table, tbody, thead{
+    flex-direction: column;
+}
+
+table{
+    width: 100%;
+    max-width: 800px;
+    flex: 1;
+}
+
+td{
+    justify-content: center
+}
+
+.box{
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+
+}
+
+.linha{
+    align-items: center;
+    padding: 10px 0 10px 0;
+    transition: .3s;
+}
+
+
+
+.head{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 8px;
+    /* border-bottom: 1px solid #848784; */
+}
+
+tbody .linha:nth-child(odd){
+background-color: #e6ede6
+}
+
+tbody .linha:hover{
+    background-color: #b4c1b4
+}
+
+.linha td:nth-child(1){
+    flex: 1;
+}
+
+.linha td:nth-child(2){
+    flex: 4
+}
+
+.linha td:nth-child(3){
+    flex: 2
+}
+
+.linha td:nth-child(4){
+    flex: 2
+}
+
+h1{
+    margin-top: 30px
+}
+
+#lista-compras{
+    margin: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    flex-direction: column;
+    max-width: 300px;
+
+}
+
+.lbl-txt{
+    margin: 15px 0px 5px 0px;
+}
+
+.input-txt{
+    border: 1px solid #b4c1b4;
+    border-radius: 5px;
+    height: 40px;
+    color: #b4c1b4;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.btn-primary{
+    border-radius: 5px;
+    border: none;    
+    height: 40px;
+    margin: 15px 0px 15px 0px;
+    color: #fff;
+    background-color: #42f44e;  
+    font-size: 18px;
+    justify-content: center;
+    text-transform: uppercase;
+}
