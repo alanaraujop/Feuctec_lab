@@ -99,6 +99,7 @@ h1{
     color: #b4c1b4;
     font-size: 18px;
     justify-content: center;
+    padding-left: 5px;
 }
 
 .btn-primary{
@@ -111,4 +112,16 @@ h1{
     font-size: 18px;
     justify-content: center;
     text-transform: uppercase;
+}
+
+#total{
+    background-color:#69d470;
+    justify-content: flex-end;
+    font-size: 15px;
+    padding-right: 75px;
+}
+
+#total td {
+    flex: none;
+    padding: 0px 10px;
 }
