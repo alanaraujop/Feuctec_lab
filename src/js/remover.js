@@ -1,6 +1,10 @@
-// Determinando variavel da tabela de produtos
-var tabelaProdutos = document.querySelector(".tabela");
+//Pegando array de botõtes delete
+var buttonDelete = document.querySelectorAll(".delete");
 
-tabelaProdutos.addEventListener("dblclick", function() {
-    event.target.parentNode.remove();
+buttonDelete.forEach(function (button) {
+    button.addEventListener("click", function () {
+        var tdParent = button.parentNode;
+        var trParent = tdParent.parentNode;
+        trParent.remove();
+    })
 });
