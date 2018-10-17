@@ -4,6 +4,34 @@ var lista = [
     {'nome': 'Chuchu', 'quantidade': 4, 'preco': 2},
 ];
 
+atualizaLista(document.querySelector('.tabela'), montaLista(lista));
+
+document.querySelector('#adicionar').addEventListener('click', () => adicionarItem(event));
+
+function adicionarItem(_event) {
+    _event.preventDefault();
+    var tabela = document.querySelector('.tabela');
+    var form = document.querySelector('#lista-compras');
+    var produto = obtemProdutoDoForm(form);
+    adicionar(produto, lista);
+    limparForm();
+    atualizaLista(document.querySelector('.tabela'), montaLista(lista));
+}
+
+function removerItem(_index){
+    let _lista = remover(_index, lista);
+    atualizaLista(document.querySelector('.tabela'), montaLista(_lista));
+}
+
+function obtemProdutoDoForm(form) {
+    var produto = {
+        nome: form.nome.value,
+        quantidade: form.quantidade.value,
+        preco: form.preco.value,
+    };
+    return produto;
+};
+
 function montaLista(_lista){
     var listaHtml = "";
     for(i=0 ; i < _lista.length; i++){
@@ -19,52 +47,8 @@ function montaTr(produto, index) {
                  <td class="info-quantidade">${produto.quantidade}</td>
                  <td class="info-preco">${produto.preco}</td>
                  <td>
-                     <button class="box delete" onclick="remover(${index})">X</button>
+                     <button class="box delete" onclick="removerItem(${index})">X</button>
                  </td>
                </tr>`;
      return produtoTr;
  };
-
-function atualizaLista(){
-    document.querySelector('.tabela').innerHTML = montaLista(lista);
-}
-
-function remover(_index) {
-    //O metodo splice recebe dois parametro. O primeiro indica o indice a ser removido 
-    //e o segundo quantos elementos será removido
-    lista.splice(_index, 1);
-    atualizaLista();
-}
-
-var btnAdicionar = document.querySelector('.btn-primary');
-btnAdicionar.addEventListener('click', function (event) {
-    event.preventDefault();
-    
-    var form = document.querySelector('#lista-compras');
-    var produto = obtemProdutoDoForm(form);
-    lista.push(produto);
-
-    limparForm();
-    atualizaLista();   
-});
-
-function obtemProdutoDoForm(form) {
-    var produto = {
-        nome: form.nome.value,
-        quantidade: form.quantidade.value,
-        preco: form.preco.value,
-
-    };
-    return produto;
-};
-
-function limparForm(){
-    var form = document.querySelector('#lista-compras');
-    var campos = form.querySelectorAll('input');
-
-    campos.forEach(campo => {
-        campo.value = "";
-    });
-}
-
-atualizaLista();
