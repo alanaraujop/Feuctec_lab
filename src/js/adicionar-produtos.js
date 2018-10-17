@@ -32,7 +32,7 @@ function montaTr(produto) {
     produtoTr.appendChild(montaTd(produto.nome, 'info-nome'));
     produtoTr.appendChild(montaTd(produto.quantidade, 'info-quantidade'));
     produtoTr.appendChild(montaTd(produto.preco, 'info-preco'));
-    produtoTr.appendChild(montaTd(btnDelete, 'delete'));
+    produtoTr.appendChild(montaTdButton('X', 'delete', 'box'));
 
     return produtoTr;
 };
@@ -46,3 +46,14 @@ function montaTd(dado, classe) {
     return td;
 };
 
+function montaTdButton(dado, classe, classe2){
+    var tdButton = document.createElement('td');
+
+    var button = document.createElement('button');
+    button.textContent = dado;
+    button.classList.add(classe, classe2);
+
+    tdButton.appendChild(button);
+
+    return tdButton;
+}
