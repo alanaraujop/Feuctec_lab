@@ -10,6 +10,7 @@ btnAdicionar.addEventListener('click', function (event) {
 
     tabela.appendChild(produtoTr)
 
+    removerTr();
 });
 
 function obtemProdutoDoForm(form) {
