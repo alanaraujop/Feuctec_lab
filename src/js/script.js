@@ -39,9 +39,12 @@ function remover(_index) {
 var btnAdicionar = document.querySelector('.btn-primary');
 btnAdicionar.addEventListener('click', function (event) {
     event.preventDefault();
+    
     var form = document.querySelector('#lista-compras');
     var produto = obtemProdutoDoForm(form);
     lista.push(produto);
+
+    limparForm();
     atualizaLista();   
 });
 
@@ -55,5 +58,13 @@ function obtemProdutoDoForm(form) {
     return produto;
 };
 
+function limparForm(){
+    var form = document.querySelector('#lista-compras');
+    var campos = form.querySelectorAll('input');
+
+    campos.forEach(campo => {
+        campo.value = "";
+    });
+}
 
 atualizaLista();
