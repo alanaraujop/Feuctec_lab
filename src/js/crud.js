@@ -3,6 +3,7 @@ function remover(_index,_lista) {
     //e o segundo quantos elementos será removido
     _lista.splice(_index, 1);
     return _lista;
+    calculoTotal()
 }
 
 function adicionar(_item, _lista){    

@@ -17,7 +17,7 @@
         <label for="quantidade" class="lbl-txt">Quantidade</label>
         <input class="input-txt" type="number" id="quantidade">
         <label for="preco" class="lbl-txt">Preço</label>
-        <input class="input-txt" type="text" id="preco">
+        <input class="input-txt" type="number" id="preco">
 
         <input type="button" class="btn-primary" id="adicionar" value="Salvar">
     </form>
@@ -68,11 +68,19 @@
                 <td></td>
             </tr> -->
         </tbody>
+        <tr class="linha" id="total">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total:&nbsp;<p class="total-number">0</p> </td>
+            <td></td>
+        </tr>
     </table>
 
     <!-- Importação do javacript -->
     <script src="./js/crud.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/calculo-total.js"></script>
     <!-- <script src="./js/monta-lista.js"></script>
     <script src="./js/remover.js"></script>
     <script src="./js/adicionar-produtos.js"></script> -->

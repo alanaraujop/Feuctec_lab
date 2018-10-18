@@ -16,11 +16,13 @@ function adicionarItem(_event) {
     adicionar(produto, lista);
     limparForm();
     atualizaLista(document.querySelector('.tabela'), montaLista(lista));
+    calculoTotal();
 }
 
 function removerItem(_index){
     let _lista = remover(_index, lista);
     atualizaLista(document.querySelector('.tabela'), montaLista(_lista));
+    calculoTotal();
 }
 
 function obtemProdutoDoForm(form) {
