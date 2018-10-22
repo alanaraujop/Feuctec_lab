@@ -1,19 +1,17 @@
-function calculoTotal(){
-    //Pegando Array com preços de cada Td
-    var tdPrecos = document.querySelectorAll(".valor");
 
-    //Pegando elementoHtml do total
-    var total = document.querySelector(".total-number");
-
-    // Percorrendo todos Preços da lista e returnando o total
-    tdPrecos.forEach(function(preco){
-        //Pegando TextContent do Preço da Td percorrida
-        var valor = preco.textContent;
-
-        var soma = parseInt(total.textContent) + parseInt(valor);
-
-        //Atualizando total e retornandos
-        total.textContent = soma;
-        return total;
+function calculoTotal() {
+    
+    var totalNumber = document.querySelector(".total-number");
+    totalNumber.textContent = parseInt(0);
+    
+    lista.forEach(function (item) {
+        var precoItem = parseInt(item.preco) * parseInt(item.quantidade);
+        
+        var soma = parseInt(totalNumber.textContent) + precoItem;
+        
+        totalNumber.textContent = soma;
+        return totalNumber;
     });
 }
+
+calculoTotal();
